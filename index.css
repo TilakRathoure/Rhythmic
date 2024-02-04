@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
+.container{
+    background-color: rgba(0, 0, 0, 0.841);
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.tryingnew{
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    width: 400px;
+    height: 585px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-image: url(./Data/Image.jpg); */
+    /* background-size: contain;
+    background-repeat: no-repeat; */
+    filter: blur(10px);
+}
+.musicplayer{
+    position: relative;
+    z-index: 3;
+    background: transparent;
+    width: 400px;
+    height: 585px;
+    padding: 25px 35px;
+    text-align: center;
+    border-radius: 7%;
+    box-shadow: 2px 2px black, -.25em 0 .8em black;
+    overflow: hidden;
+
+}
+.aboutpanel{
+    position: absolute;
+    z-index: 4;
+    width:300px ;
+    height: 585px;
+    border-radius: 7%;
+    background-color: #03742b;
+    padding: 10px 15px;
+    right: -75%;
+    top: 0px;    
+    transition:right 1s ease-in;
+}
+.aboutpanel img{
+    width: 200px;
+    height: 200px;
+}
+.aboutpanel.active{
+    right:0;
+}
+
+#back{
+    display: none;
+}
+#back.active{
+    display: block;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+    transition: justify-content 1s ease-in;
+}
+.nav.active{
+    justify-content: space-between;
+}
+.circle{
+    background-color:  #1db954;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    box-shadow: 0 5px 10px rgba(255,26,26,0.22);
+    cursor: pointer;
+
+}
+img{
+    width: 220px;
+    border: 3px solid  #1db954;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(255,26,26,0.22);
+}
+#progress{
+    cursor: pointer;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background:  #1db954;
+    border-radius: 4px;
+    margin: 30px 0;
+}
+#progress::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 8px solid white;
+    background-color: #1db954;
+    box-shadow: 0 5px 5px rgba(255,26,26,0.22);
+}
+.controls{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    gap: 30px;
+}
+.controls div{
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    color: #1db954;
+}
+.controls div:nth-child(2){
+    background-color: #1ed760;
+    color: white;
+    transform: scale(1.5);
+}
+.controllers{
+    display: flex;
+    gap: 40px;
+    margin-top: 10px;
+}
+#volume{
+    padding-top: 11px;
+    color: white;
+}
+#firstdiv{
+    position: relative;
+    background-color:  #1db954;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 0px;
+    cursor: pointer;
+}
+#change-volume{
+    bottom: 59px;
+    left: -52px;
+    position: absolute;
+    transform: rotate(270deg);
+    accent-color: #49da7c,;
+}
+
+.timing{
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 10px; */
+}
+.timing p{
+    font-weight: 400;
+}
+.postmalone > p{
+    font-size: 20px;
+
+}
+.div-of-change-volume{
+    position: absolute;
+    left: 4px;
+    bottom: 41px;
+    width: 25px;
+    height: 140px;
+    background-color:#1ed760;
+    border-radius: 10px;
+     display:none;
+}
+h1,h2,p{
+    color: white;
+}
+.heart{
+    position: absolute;
+    left: 10px;
+    bottom: 50px;
+    transform: scale(1.5);
+    color: white;
+    cursor: pointer;
+    transition: color 0.25s ease-in;
+}
+.repeat{
+    background-color: white;
+    color: #1db954;
+    width: 50px;
+    height: 40px;
+    transition:color 1s ease-in;
+}
+.repeat.active{
+    background-color: #1db954;
+    color: white;
+}
+.heart.active{
+    color: rgb(236, 16, 16);
+}
+
+.aboutpanel h2{
+    margin-bottom: 10px;
+}
+.aboutpanel h3{
+    margin-bottom: 10px;
+}
+.aboutpanel img{
+    margin-top: 30px;
+    border: 1px solid white;
+    border-radius: 1%;
+}
+
+.aboutpanel h2{
+    color: black;
+}
+.aboutpanel p{
+    color: white;
+    font-weight: 100px;
+}

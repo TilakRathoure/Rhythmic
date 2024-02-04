@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/4ce23ec6e4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="tryingnew"></div>
+        <div class="musicplayer"><div class="aboutpanel">
+            <div class="classdivclass">
+                <img src="./Data/Image.jpg" alt="">
+                <h2>Post Malone</h2>
+                <p>Post Malone, aka Austin Richard Post, is a genre-blending American artist celebrated for hits like "White Iverson" and "Rockstar." His music combines hip-hop, rock, and pop, delving into themes of love, nightlife, and introspection, captivating a broad fan base.</p>
+            </div></div>
+            <nav class="nav">
+                <div class="circle" id="back">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="circle" id="about">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <div class="postmalone">
+                <img id="image" src="./Data/Image.jpg" alt="">
+                <div style="position: relative;">
+                <h2 id="songname">White Iverson</h2>
+                <p id="artist">Post Malone</p>
+                <div class="timing">
+                    <p id="current-time">0:00</p>
+                    <p id="total-time">2:00</p></div>
+                    <div class="heart"><i class="fa-solid fa-heart"></i></div>
+                </div>
+            <audio id="song">
+                <source src="./Data/Post-Malone-White-Iverson.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="progress">
+            <div class="controllers">
+            <div id="firstdiv"><i class="fa-solid fa-volume-high" id="volume"></i>
+                <div class="div-of-change-volume">
+                <input type="range" id="change-volume" max="100"></div>
+                </div>
+            <div class="controls">
+                <div id="previous"><i class="fa-solid fa-backward"></i>
+                </div>
+                <div id="play" onclick="playpause()"><i class="fa-solid fa-play " id="cnt"></i></div>
+                <div id="next"><i class="fa-solid fa-forward"></i></div>
+            </div>
+            <div class="circle repeat"><i class="fa-solid fa-repeat"></i></div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="newnew"></div>
+    <script src="index.js"></script>
+</body>
+</html>
