@@ -211,18 +211,39 @@ const about=document.querySelector("#about");
 const aboutpanel=document.querySelector(".aboutpanel");
 const back=document.querySelector("#back");
 const nav=document.querySelector(".nav");
+const divplaylist=document.querySelector(".playlist");
+const playlistpanel=document.querySelector(".playlistpanel");
+const backplaylist=document.querySelector("#backplaylist");
 
 about.addEventListener("click",()=>{
    aboutpanel.classList.toggle("active");
    back.classList.toggle("active");
-   nav.classList.toggle("active");
+   divplaylist.classList.toggle("active");
 })
 
 back.addEventListener("click",()=>{
    aboutpanel.classList.toggle("active");
    back.classList.toggle("active");
-   nav.classList.toggle("active");
+   divplaylist.classList.toggle("active");
 })
+
+divplaylist.addEventListener("click",()=>{
+   playlistpanel.classList.toggle("active");
+   divplaylist.style.display="none";
+   about.style.display="none";
+   backplaylist.style.display="block";
+   nav.style.justifyContent="flex-end";
+
+});
+
+backplaylist.addEventListener("click",()=>{
+   playlistpanel.classList.toggle("active");
+   divplaylist.style.display="block";
+   about.style.display="block";
+   backplaylist.style.display="none";
+   nav.style.justifyContent="space-between";
+})
+
  
 
 
