@@ -215,16 +215,16 @@ const divplaylist=document.querySelector(".playlist");
 const playlistpanel=document.querySelector(".playlistpanel");
 const backplaylist=document.querySelector("#backplaylist");
 
-about.addEventListener("click",()=>{
+about.addEventListener("click",async()=>{
    aboutpanel.classList.toggle("active");
+   divplaylist.style.display="none";
    back.classList.toggle("active");
-   divplaylist.classList.toggle("active");
 })
 
 back.addEventListener("click",()=>{
    aboutpanel.classList.toggle("active");
    back.classList.toggle("active");
-   divplaylist.classList.toggle("active");
+   divplaylist.style.display="block";
 })
 
 divplaylist.addEventListener("click",()=>{
