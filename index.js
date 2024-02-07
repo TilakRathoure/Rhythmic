@@ -6,7 +6,7 @@ const progress= document.getElementById("progress");
  const current=document.getElementById("current-time");
 
 
-
+//PLAYING MUSIC UPON CHANGING INPUT VALUE
 
  progress.addEventListener("input",function(){
    music.play();
@@ -16,6 +16,7 @@ const progress= document.getElementById("progress");
  })
 
 
+ //SONG TOTAL TIMING UPON LOADING
 
  music.onloadedmetadata=function(){
    let sec=Math.floor((music.duration)%60);
@@ -35,7 +36,7 @@ const progress= document.getElementById("progress");
  }
 
 
-
+//PLAY PAUSE BUTTON
 
  function playpause(){
     if(cnt.classList.contains("fa-pause")){
@@ -51,7 +52,7 @@ const progress= document.getElementById("progress");
  }
 
 
-
+//CHANGING INPUT RANGE VALUES ACCORDING TO THE SONG
 
  if(music.play()){
     setInterval(()=>{progress.value=music.currentTime;
@@ -75,7 +76,7 @@ const progress= document.getElementById("progress");
  });
 
 
-
+ //VOLUME INPUT
 
    changevolume.addEventListener('input', function() {
 
@@ -87,7 +88,7 @@ const progress= document.getElementById("progress");
       volumeicon.classList.add("fa-volume-low");
       volumeicon.classList.remove("fa-volume-xmark");
       volumeicon.classList.remove("fa-volume-high");
-   // }
+
    }
    else{
       volumeicon.classList.add("fa-volume-high");
@@ -98,12 +99,13 @@ const progress= document.getElementById("progress");
 
 
 
-
+//ADDING 0 IF TIME IS SINGLE DIGIT.
 
  setInterval(()=>{
    let sec=Math.floor((music.currentTime)%60);
    let min=Math.floor((music.currentTime)/60);
    sec=String(sec);
+
    if(sec.length==1){
       sec="0"+sec;
       current.innerHTML=`${min}:${sec}`;
@@ -122,24 +124,20 @@ const progress= document.getElementById("progress");
  },1000)
 
 
-
-
-
-
+//REPEAT BUTTON
  const repeat=document.querySelector(".repeat");
  repeat.addEventListener("click",()=>{
    repeat.classList.toggle("active");
  })
 
-
+//HEART BUTTON
  const heart=document.querySelector(".heart");
  heart.addEventListener("click",()=>{
    heart.classList.toggle("active");
  })
 
 
-
-
+//DATABASE
 
  songs=[{artist:"Post Malone",songname:"White Iverson",image:"./Data/pic1.jpg",aboutimage:"./Data/artist1.jpg",aboutartist:"Post Malone, aka Austin Richard Post, is a genre-blending American artist celebrated for hits like \"White Iverson\" and \"Rockstar.\" His music combines hip-hop, rock, and pop, delving into themes of love, nightlife, and introspection, captivating a broad fan base.",aboutname:"Post Malone",background:"./Data/artist1.jpg",song:"./Data/song1.mp3"},{artist:"The Weeknd",songname:"Blinding Lights",image:"./Data/pic2.png",aboutimage:"./Data/artist2,5.jpg",aboutartist:"The Weeknd: Canadian singer known for seductive vocals and hits like \"Blinding Lights.\" Emotive lyrics explore love, lust, and heartbreak. Rising to fame with genre-blending music, Abel Tesfaye captivates global audiences with his unique sound and electrifying performances.",aboutname:"The Weeknd",background:"./Data/artist2,5.jpg",song:"./Data/song2.mp3"},{artist:"Travis Scott",songname:"Goosebumps",image:"./Data/pic3.jpg",aboutimage:"./Data/artist3.jpg",aboutartist:"Houston-born rapper Travis Scott rose to fame with albums like \"Rodeo\" and \"Astroworld,\" blending hip-hop, trap, and psychedelic rock. Hits like \"Sicko Mode\" showcase his dynamic style. He collaborates with brands like Nike and engages in philanthropy, cementing his status as a cultural icon.",aboutname:"Travis Scott",background:"./Data/artist3.jpg",song:"./Data/song3.mp3"},{artist:"Dababy",songname:"Rockstar",image:"./Data/pic4.jpg",aboutimage:"./Data/artist4.jpg",aboutartist:"DaBaby, born Jonathan Lyndale Kirk, is an American rapper known for hits like \"Suge.\" His dynamic flow and charismatic presence have propelled him to stardom, captivating audiences with his energetic performances and clever wordplay.",aboutname:"Dababy",background:"./Data/artist4.jpg",song:"./Data/song4.mp3"},
  {artist:"The Weeknd",songname:"Reminder",image:"./Data/pic5.jpg",aboutimage:"./Data/artist2,5.jpg",aboutartist:"The Weeknd: Canadian singer known for seductive vocals and hits like \"Blinding Lights.\" Emotive lyrics explore love, lust, and heartbreak. Rising to fame with genre-blending music, Abel Tesfaye captivates global audiences with his unique sound and electrifying performances.",aboutname:"The Weeknd",background:"./Data/artist2,5.jpg",song:"./Data/song5.mp3"}
@@ -160,6 +158,7 @@ const aboutname=document.querySelector(".aboutpanel h2");
 
 
 
+//LOADING SONG INDEX
 
 function songloaded(songindex){
    artist.innerHTML=songs[songindex].artist;
@@ -182,6 +181,7 @@ let songindex=0;
 songloaded(songindex);
 
 
+//NEXT BUTTON
 
 next.addEventListener("click",()=>{
    if(songindex==4){
@@ -194,6 +194,7 @@ next.addEventListener("click",()=>{
 });
 
 
+//PREVIOUS BUTTON
 
 previous.addEventListener("click",()=>{
    if(songindex==0){
@@ -215,6 +216,9 @@ const divplaylist=document.querySelector(".playlist");
 const playlistpanel=document.querySelector(".playlistpanel");
 const backplaylist=document.querySelector("#backplaylist");
 
+
+//OPENING AND CLOSING ABOUTPANEL
+
 about.addEventListener("click",async()=>{
    aboutpanel.classList.toggle("active");
    divplaylist.style.display="none";
@@ -226,6 +230,8 @@ back.addEventListener("click",()=>{
    back.classList.toggle("active");
    divplaylist.style.display="block";
 })
+
+//OPENING AND CLOSING SONGPLAYLIST
 
 divplaylist.addEventListener("click",()=>{
    playlistpanel.classList.toggle("active");
