@@ -22,9 +22,6 @@
     height: 585px;
     margin-left: auto;
     margin-right: auto;
-    /* background-image: url(./Data/Image.jpg); */
-    /* background-size: contain;
-    background-repeat: no-repeat; */
     filter: blur(10px);
 }
 .musicplayer{
@@ -93,6 +90,38 @@
 }
 .playlistpanel.active{
     left:0;
+}
+
+.playlistpanel h2{
+    margin-bottom: 30px;
+}
+
+.div{
+    cursor: pointer;
+    display: flex;
+    padding: 15px 15px;
+    border-bottom: 3px solid gainsboro;
+    margin: 2px;
+
+}
+.div.active p{
+    color: aqua;
+}
+.div.active img{
+    border: 3px solid aqua;
+}
+.div.active{
+    border-bottom:4px solid aqua;
+}
+
+.div p{
+    margin :auto;
+}
+.div img{
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 20%;
+
 }
 
 #backplaylist{
@@ -245,7 +274,7 @@ h1,h2,p{
 }
 
 .aboutpanel h2{
-    color: black;
+    color: white;
 }
 .aboutpanel p{
     color: white;

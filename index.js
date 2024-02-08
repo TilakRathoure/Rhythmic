@@ -155,7 +155,6 @@ let songindex=0;
       songs[songindex].heart="no";
       heart.classList.remove("active");
    }
-   console.log(songs[songindex].heart)
  });
 
 
@@ -270,6 +269,38 @@ backplaylist.addEventListener("click",()=>{
    backplaylist.style.display="none";
    nav.style.justifyContent="space-between";
 })
+
+const playlistdiv=Array.from(document.getElementsByClassName("div"));
+
+playlistdiv.forEach((e)=>{
+   e.addEventListener("click",()=>{
+      for(f of playlistdiv){
+         f.classList.remove("active");
+      }
+      e.classList.toggle("active");
+      if(e.classList.contains("1")){
+         songindex=0;
+         songloaded(songindex);
+      }
+      else if(e.classList.contains("2")){
+         songindex=1;
+         songloaded(songindex);
+      }
+      else if(e.classList.contains("3")){
+         songindex=2;
+         songloaded(songindex);
+      }
+      else if(e.classList.contains("4")){
+         songindex=3;
+         songloaded(songindex);
+      }
+      else if(e.classList.contains("5")){
+         songindex=4;
+         songloaded(songindex);
+      }
+   })
+})
+
 
  
 
