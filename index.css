@@ -43,7 +43,7 @@
     width:300px ;
     height: 585px;
     border-radius: 7%;
-    background-color: #03742b;
+    background-color: #03745a;
     padding: 10px 15px;
     right: -75%;
     top: 0px;    
@@ -52,6 +52,7 @@
 .aboutpanel img{
     width: 200px;
     height: 200px;
+    object-fit: cover;
 }
 .aboutpanel.active{
     right:0;
@@ -81,7 +82,7 @@
     width:300px ;
     height: 585px;
     border-radius: 7%;
-    background-color: #03742b;
+    background-color: #036b56;
     padding: 10px 15px;
     padding-top: 30px;
     left: -75%;
