@@ -103,6 +103,7 @@
     padding: 15px 15px;
     border-bottom: 3px solid gainsboro;
     margin: 2px;
+    position: relative;
 
 }
 .div.active p{
@@ -113,6 +114,15 @@
 }
 .div.active{
     border-bottom:4px solid aqua;
+}
+.playlisticon{
+    display: none;
+}
+.div.active .playlisticon{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        display: block;
 }
 
 .div p{

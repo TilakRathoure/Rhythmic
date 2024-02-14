@@ -169,7 +169,7 @@ const next=document.querySelector("#next");
 const aboutimage=document.querySelector(".aboutpanel img");
 const aboutartist=document.querySelector(".aboutpanel p");
 const aboutname=document.querySelector(".aboutpanel h2");
-
+const playlistdiv=Array.from(document.getElementsByClassName("div"));
 
 
 //LOADING SONG INDEX
@@ -199,6 +199,34 @@ function songloaded(songindex){
 };
 
 songloaded(songindex);
+playlistindex(songindex);
+
+// changing the playlistindex
+
+function playlistindex(songindex){
+   for(let play of playlistdiv){
+      play.classList.remove("active");
+   }
+   if(songindex==0){
+      playlistdiv[0].classList.add("active");
+
+   }
+   else if(songindex==1){
+      playlistdiv[1].classList.add("active");
+
+   }
+   else if(songindex==2){
+      playlistdiv[2].classList.add("active");
+
+   }
+   else if(songindex==3){
+      playlistdiv[3].classList.add("active");
+
+   }
+   else{
+      playlistdiv[4].classList.add("active");  
+   }
+}
 
 
 //NEXT BUTTON
@@ -210,7 +238,9 @@ next.addEventListener("click",()=>{
    else{
       songindex+=1;
    }
+
    songloaded(songindex);
+   playlistindex(songindex);
 });
 
 
@@ -224,6 +254,8 @@ previous.addEventListener("click",()=>{
       songindex-=1;
    }
    songloaded(songindex);
+   playlistindex(songindex);
+   listindex-=1;
 });
 
 
@@ -270,12 +302,15 @@ backplaylist.addEventListener("click",()=>{
    nav.style.justifyContent="space-between";
 })
 
-const playlistdiv=Array.from(document.getElementsByClassName("div"));
+//Songplaylist
+const icon=document.querySelector(".playlisticon");
+
 
 playlistdiv.forEach((e)=>{
    e.addEventListener("click",()=>{
       for(f of playlistdiv){
          f.classList.remove("active");
+
       }
       e.classList.toggle("active");
       if(e.classList.contains("1")){
