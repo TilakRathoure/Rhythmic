@@ -4,6 +4,7 @@ const progress= document.getElementById("progress");
  const cnt=document.getElementById("cnt");
  const total=document.getElementById("total-time");
  const current=document.getElementById("current-time");
+ const repeat=document.querySelector(".repeat");
 
 
 //PLAYING MUSIC UPON CHANGING INPUT VALUE
@@ -54,8 +55,19 @@ const progress= document.getElementById("progress");
 
 //CHANGING INPUT RANGE VALUES ACCORDING TO THE SONG
 
+//ALSO CONFIGURING THE REPREAT BUTTON
+
  if(music.play()){
     setInterval(()=>{progress.value=music.currentTime;
+      if(music.currentTime==music.duration){
+         if(repeat.classList.contains("active")){
+            music.currentTime=0;
+            setTimeout(()=>{music.play()},500);
+         }
+         else{
+            nextbtn();
+         }
+      };
       500});
  }
 
@@ -125,7 +137,7 @@ const progress= document.getElementById("progress");
 
 
 //REPEAT BUTTON
- const repeat=document.querySelector(".repeat");
+
  repeat.addEventListener("click",()=>{
    repeat.classList.toggle("active");
  })
@@ -230,8 +242,7 @@ function playlistindex(songindex){
 
 
 //NEXT BUTTON
-
-next.addEventListener("click",()=>{
+function nextbtn(){
    if(songindex==4){
       songindex=0;
    }
@@ -241,7 +252,13 @@ next.addEventListener("click",()=>{
 
    songloaded(songindex);
    playlistindex(songindex);
-});
+   cnt.classList.remove("fa-pause");
+   cnt.classList.add("fa-play");
+
+}
+
+next.addEventListener("click",nextbtn);
+
 
 
 //PREVIOUS BUTTON
@@ -255,7 +272,8 @@ previous.addEventListener("click",()=>{
    }
    songloaded(songindex);
    playlistindex(songindex);
-   listindex-=1;
+   cnt.classList.remove("fa-pause");
+   cnt.classList.add("fa-play");
 });
 
 
