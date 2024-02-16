@@ -91,6 +91,9 @@ const progress= document.getElementById("progress");
  //VOLUME INPUT
 
    changevolume.addEventListener('input', function() {
+      var volume = parseFloat(changevolume.value) / 100;
+      music.volume = volume;
+      
 
    if(changevolume.value==0){
       volumeicon.classList.add("fa-volume-xmark");
