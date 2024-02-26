@@ -31,7 +31,7 @@ const progress= document.getElementById("progress");
    min="0"+min;
 }
    total.innerHTML=`${min}:${sec}`;
-   music.pause();
+   music.play();
    progress.max=music.duration;
    progress.value=music.currentTime;
  }

@@ -45,7 +45,7 @@
     border-radius: 7%;
     background-color: #03745a;
     padding: 10px 15px;
-    right: -75%;
+    right: -90%;
     top: 0px;    
     transition:right 1s ease-in;
 }
@@ -85,7 +85,7 @@
     background-color: #036b56;
     padding: 10px 15px;
     padding-top: 30px;
-    left: -75%;
+    left: -90%;
     top: 0px;    
     transition:left 1s ease-in;
 }
