@@ -327,7 +327,7 @@ backplaylist.addEventListener("click",()=>{
 const icon=document.querySelector(".playlisticon");
 
 
-playlistdiv.forEach((e)=>{
+playlistdiv.forEach( (e)=>{
    e.addEventListener("click",()=>{
       for(f of playlistdiv){
          f.classList.remove("active");
@@ -337,22 +337,37 @@ playlistdiv.forEach((e)=>{
       if(e.classList.contains("1")){
          songindex=0;
          songloaded(songindex);
+         cnt.classList.remove("fa-play");
+         cnt.classList.add("fa-pause");
+         a=setTimeout(()=>{music.play()},1000)
       }
       else if(e.classList.contains("2")){
          songindex=1;
          songloaded(songindex);
+         cnt.classList.remove("fa-play");
+         cnt.classList.add("fa-pause");
+         a=setTimeout(()=>{music.play()},1000)
       }
       else if(e.classList.contains("3")){
          songindex=2;
          songloaded(songindex);
+         cnt.classList.remove("fa-play");
+         cnt.classList.add("fa-pause");
+         a=setTimeout(()=>{music.play()},1000)
       }
       else if(e.classList.contains("4")){
          songindex=3;
          songloaded(songindex);
+         cnt.classList.remove("fa-play");
+         cnt.classList.add("fa-pause");
+         a=setTimeout(()=>{music.play()},1000)
       }
       else if(e.classList.contains("5")){
          songindex=4;
          songloaded(songindex);
+         cnt.classList.remove("fa-play");
+         cnt.classList.add("fa-pause");
+         a=setTimeout(()=>{music.play()},1000)
       }
    })
 })
