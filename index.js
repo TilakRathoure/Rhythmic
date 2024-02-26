@@ -255,8 +255,9 @@ function nextbtn(){
 
    songloaded(songindex);
    playlistindex(songindex);
-   cnt.classList.remove("fa-pause");
-   cnt.classList.add("fa-play");
+   cnt.classList.remove("fa-play");
+   cnt.classList.add("fa-pause");
+   setTimeout(()=>{music.play()},1000)
 
 }
 
@@ -275,8 +276,9 @@ previous.addEventListener("click",()=>{
    }
    songloaded(songindex);
    playlistindex(songindex);
-   cnt.classList.remove("fa-pause");
-   cnt.classList.add("fa-play");
+   cnt.classList.remove("fa-play");
+   cnt.classList.add("fa-pause");
+   setTimeout(()=>{music.play()},1000)
 });
 
 
